@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify UI Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            min-width: 100%;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #000000;
+            min-height: 100vh;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        .sidebar h5 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #333333;
+            border-radius: 5px;
+        }
+
+        .sidebar button {
+            background-color: #282828;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar button:hover {
+            background-color: #333333;
+        }
+
+        .legal-links {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .main-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .main-content h3 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .artist-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .artist-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .album-card img {
+            border-radius: 5px;
+            width: 100%;
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        .album-card img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hover Effects */
+        .artist-card:hover h6 {
+            color: #1DB954;
+        }
+
+        .album-card:hover h6, .album-card:hover p {
+            color: #1DB954;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            background-color: #333333;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .header-icons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-icons i {
+            color: white;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 sidebar ">
+                <h5>Your Library</h5>
+                <button>Create playlist</button>
+                <button>Browse podcasts</button>
+                <div class="legal-links">
+                    <a href="#" class="fs-5">Legal</a>
+                    <a href="#" class="fs-5">Privacy Policy</a>
+                    <a href="#" class="fs-5">Cookies</a>
+                    <a href="#" class="fs-5">About Ads</a>
+                    <a href="#" class="fs-5">Accessibility</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-10 main-content">
+                <div class="row header-icons">
+                    <div class="col-md-8">
+                        <input type="text" class="search-bar" placeholder="What do you want to play?">
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <i class="bi bi-house-door-fill"></i>
+                        <button class="btn btn-light ms-3">Log in</button>
+                        <button class="btn btn-outline-light ms-2">Sign up</button>
+                    </div>
+                </div>
+
+                <!-- Popular Artists Section -->
+                <h3>Popular artists</h3>
+                <div class="row">
+                    <div class="col-md-2 artist-card">
+                        <img src="./assets/A1.jpeg" alt="Pritam">
+                        <h6 class="mt-2">Pritam</h6>
+                    </div>
+                    <div class="col-md-2 artist-card">
+                        <img src="./assets/B1.jpeg" alt="A.R. Rahman">
+                        <h6 class="mt-2">A.R. Rahman</h6>
+                    </div>
+                    <div class="col-md-2 artist-card">
+                        <img src="./assets/C1.jpeg" alt="Sachin-Jigar">
+                        <h6 class="mt-2">Sachin-Jigar</h6>
+                    </div>
+                    <div class="col-md-2 artist-card">
+                        <img src="./assets/D1.jpeg" alt="Arijit Singh">
+                        <h6 class="mt-2">Arijit Singh</h6>
+                    </div>
+                    <div class="col-md-2 artist-card">
+                        <img src="./assets/E1.jpeg" alt="Anirudh Ravichander">
+                        <h6 class="mt-2">Anirudh Ravichander</h6>
+                    </div>
+                    <div class="col-md-2 artist-card">
+                        <img src="./assets/F1.jpeg" alt="Anirudh Ravichander">
+                        <h6 class="mt-2">Atif Aslam</h6>
+                    </div>
+                </div>
+
+                <!-- Popular Albums Section -->
+                <h3>Popular albums</h3>
+                <div class="row">
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/1.jpeg" alt="Album 1">
+                        <h6 class="mt-2">GLORY</h6>
+                        <p>Yo Yo Honey Singh</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/2.jpeg" alt="Album 2">
+                        <h6 class="mt-2">Love Hotel</h6>
+                        <p>leftovermax</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/3.jpeg" alt="Album 3">
+                        <h6 class="mt-2">Aashiqui 2</h6>
+                        <p>Mithoon, Ankit Tiwari, Jeet Gannguli</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/4.jpeg" alt="Album 4">
+                        <h6 class="mt-2">Jo Tum Mere Ho</h6>
+                        <p>Anuv Jain</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/5.jpeg" alt="Album 5">
+                        <h6 class="mt-2">Making Memories</h6>
+                        <p>Karan Aujla, Ikky</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/6.jpeg" alt="Album 5">
+                        <h6 class="mt-2">Aaj ki raat (Stree2)</h6>
+                        <p>Sachin Jiggar</p>
+                    </div>
+                </div>
+                <h3>Popular Radios</h3>
+                <div class="row" style="margin-bottom: 80px;">
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/R1.jpeg" alt="Album 1">
+                        <h6 class="mt-2">GLORY</h6>
+                        <p>Yo Yo Honey Singh</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/R2.jpeg" alt="Album 2">
+                        <h6 class="mt-2">Love Hotel</h6>
+                        <p>leftovermax</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/R3.jpeg" alt="Album 3">
+                        <h6 class="mt-2">Aashiqui 2</h6>
+                        <p>Mithoon, Ankit Tiwari, Jeet Gannguli</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/R4.jpeg" alt="Album 4">
+                        <h6 class="mt-2">Jo Tum Mere Ho</h6>
+                        <p>Anuv Jain</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/R5.jpeg" alt="Album 5">
+                        <h6 class="mt-2">Making Memories</h6>
+                        <p>Karan Aujla, Ikky</p>
+                    </div>
+                    <div class="col-md-2 album-card">
+                        <img src="./assets/R6.jpeg" alt="Album 5">
+                        <h6 class="mt-2">Making Memories</h6>
+                        <p>Karan Aujla, Ikky</p>
+                    </div>
+                </div>
+                
+            </div>
+            <footer class="mt-5 opacity-75 " style="position: fixed; bottom: 0; width: 100%; background-color: #181818; padding: 10px 30px; color: white;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <img src="./assets/1.jpeg" alt="Album Art" class="rounded" style="height: 60px; width: 60px;">
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="mb-0">Millionare</h6>
+                            <p class="mb-0">Honey Singh</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center" style="width: 40%;">
+                        <div class="d-flex justify-content-center align-items-center mb-2">
+                            <i class="bi bi-shuffle mx-3"></i>
+                            <i class="bi bi-skip-backward-fill mx-3"></i>
+                            <i class="bi bi-play-circle-fill mx-3" style="font-size: 40px;"></i>
+                            <i class="bi bi-skip-forward-fill mx-3"></i>
+                            <i class="bi bi-repeat mx-3"></i>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center w-100">
+                            <span>0:00</span>
+                            <input type="range" class="form-range mx-3" value="0" style="flex: 1;">
+                            <span>3:45</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-card-list mx-2"></i>
+                        <i class="bi bi-laptop mx-2"></i>
+                        <i class="bi bi-volume-up mx-2"></i>
+                        <input type="range" class="form-range mx-2" style="width: 100px;">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </div>
+                </div>
+            </footer>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" rel="stylesheet">
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
